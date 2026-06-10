@@ -71,7 +71,7 @@ export default function Services() {
                   </p>
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-2 mt-5 font-body text-[0.6875rem] font-medium tracking-[0.12em] uppercase text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    className="inline-flex items-center gap-2 mt-3 py-3 font-body text-[0.6875rem] font-medium tracking-[0.12em] uppercase text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                   >
                     {s.cta} →
                   </a>

@@ -112,8 +112,15 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    font-size: 16px;
   }
   html {
     @apply font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
   }
 }

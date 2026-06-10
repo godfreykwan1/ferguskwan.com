@@ -24,7 +24,7 @@ export default function Footer() {
           </ul>
 
           <p className="font-body text-[0.75rem] font-light text-ivory/35">
-            &copy; 2025 Fergus Kwan. All rights reserved.
+            &copy; 2026 Fergus Kwan. All rights reserved.
           </p>
 
         </div>

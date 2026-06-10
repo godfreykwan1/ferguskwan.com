@@ -11,16 +11,27 @@ const playlist = [
 ];
 
 export function VideoCurtain() {
-  const [activeId,     setActiveId]     = useState(playlist[0].id);
-  const [curtainOpen,  setCurtainOpen]  = useState(false);
-  const ref     = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-150px" });
+  const [activeId,    setActiveId]    = useState(playlist[0].id);
+  const [isPlaying,   setIsPlaying]   = useState(false);
+  const [curtainOpen, setCurtainOpen] = useState(false);
+  const ref      = useRef<HTMLDivElement>(null);
+  const isInView  = useInView(ref, { once: true, margin: "-150px" });
 
   useEffect(() => {
     if (isInView && !curtainOpen) {
       setTimeout(() => setCurtainOpen(true), 400);
     }
   }, [isInView, curtainOpen]);
+
+  const handleThumbnailClick = (id: string) => {
+    if (id !== activeId) {
+      // Switching video resets to facade; user clicks play for the new one
+      setIsPlaying(false);
+      setActiveId(id);
+    }
+  };
+
+  const activeTitle = playlist.find(v => v.id === activeId)?.title ?? '';
 
   return (
     <div ref={ref} className="w-full py-24 px-6" style={{ background: 'var(--color-primary)' }}>
@@ -49,18 +60,57 @@ export function VideoCurtain() {
           }}>Selected Performances</h2>
         </motion.div>
 
-        {/* Main video with curtain */}
+        {/* Main video */}
         <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
 
-          {/* Video underneath */}
-          <iframe
-            key={activeId}
-            src={`https://www.youtube.com/embed/${activeId}?controls=1&modestbranding=1&rel=0`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="absolute inset-0 w-full h-full border-0"
-            style={{ borderRadius: '4px' }}
-          />
+          {isPlaying ? (
+            /* ── Real iframe — only mounted after user clicks play ── */
+            <iframe
+              key={activeId}
+              src={`https://www.youtube.com/embed/${activeId}?autoplay=1&controls=1&modestbranding=1&rel=0`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full border-0"
+              title={`Fergus Kwan — ${activeTitle}`}
+              style={{ borderRadius: '4px' }}
+            />
+          ) : (
+            /* ── Click-to-load facade — no iframe, no YouTube requests ── */
+            <button
+              className="absolute inset-0 w-full h-full"
+              onClick={() => setIsPlaying(true)}
+              aria-label={`Play ${activeTitle}`}
+              style={{ padding: 0, border: 'none', borderRadius: '4px', overflow: 'hidden', cursor: 'pointer' }}
+            >
+              <img
+                src={`https://img.youtube.com/vi/${activeId}/maxresdefault.jpg`}
+                onError={(e) => {
+                  e.currentTarget.src = `https://img.youtube.com/vi/${activeId}/mqdefault.jpg`;
+                }}
+                alt={`Fergus Kwan — ${activeTitle}`}
+                className="w-full h-full object-cover"
+              />
+              {/* Play button */}
+              <div
+                className="absolute inset-0 flex items-center justify-center"
+                style={{ background: 'rgba(0,0,0,0.25)' }}
+              >
+                <div style={{
+                  width: '72px',
+                  height: '72px',
+                  background: 'rgba(0,0,0,0.72)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                  <svg viewBox="0 0 24 24" width="30" height="30" fill="white" aria-hidden="true">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+            </button>
+          )}
 
           {/* Left curtain panel */}
           <motion.div
@@ -78,6 +128,7 @@ export function VideoCurtain() {
               alignItems: 'center',
               justifyContent: 'flex-end',
               paddingRight: '24px',
+              pointerEvents: 'none',
             }}
           >
             <span style={{
@@ -104,6 +155,7 @@ export function VideoCurtain() {
               alignItems: 'center',
               justifyContent: 'flex-start',
               paddingLeft: '24px',
+              pointerEvents: 'none',
             }}
           >
             <span style={{
@@ -126,7 +178,7 @@ export function VideoCurtain() {
           {playlist.map((video) => (
             <motion.button
               key={video.id}
-              onClick={() => setActiveId(video.id)}
+              onClick={() => handleThumbnailClick(video.id)}
               whileHover={{ scale: 1.04, y: -4 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
@@ -147,7 +199,7 @@ export function VideoCurtain() {
             >
               <img
                 src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
-                alt={video.title}
+                alt={`Fergus Kwan — ${video.title}`}
                 className="w-full h-full object-cover"
                 style={{
                   opacity: activeId === video.id ? 1 : 0.5,

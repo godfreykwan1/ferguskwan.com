@@ -2,6 +2,7 @@ const SERVICES = [
   {
     number: '001',
     tag:    'Piano Lessons',
+    altText: 'Close-up of piano keyboard in dramatic lighting',
     heading: 'One-on-one tuition from first note to concert stage',
     body:   'Lessons shaped around your level and ambitions — beginner foundations through advanced repertoire, technique, and competition preparation. In-person in Vancouver or online.',
     cta:    'Enquire about lessons',
@@ -10,6 +11,7 @@ const SERVICES = [
   {
     number: '002',
     tag:    'Performances',
+    altText: 'Concert pianist performing at a grand piano on stage',
     heading: 'Recitals and engagements spanning Baroque to the present day',
     body:   'Solo recitals, concerto appearances, and special events. Appearances include the Chan Centre, VSO Day of Music, and stages across Europe and North America. Programmes tailored to your occasion.',
     cta:    'Book a performance',
@@ -18,6 +20,7 @@ const SERVICES = [
   {
     number: '003',
     tag:    'Compositions',
+    altText: 'Handwritten classical sheet music notation',
     heading: 'Original works and bespoke commissions for any ensemble',
     body:   'From solo piano miniatures to full orchestral scores — original works and commissions premiered at UBC, ChamberFest, and private events. All enquiries welcome.',
     cta:    'Commission a work',
@@ -82,7 +85,7 @@ export default function Services() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={s.image}
-                    alt={s.tag}
+                    alt={s.altText}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                 </div>

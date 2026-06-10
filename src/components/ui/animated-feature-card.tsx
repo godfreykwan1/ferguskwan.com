@@ -13,20 +13,23 @@ interface AnimatedFeatureCardProps extends React.HTMLAttributes<HTMLDivElement> 
 }
 
 const colorVariants = {
+  /* warm amber — matches site accent #92400E */
   orange: {
-    '--feature-color':       'hsl(35, 91%, 55%)',
-    '--feature-color-light': 'hsl(41, 100%, 85%)',
-    '--feature-color-dark':  'hsl(24, 98%, 98%)',
+    '--feature-color':       'hsl(27, 72%, 46%)',
+    '--feature-color-light': 'hsl(32, 60%, 88%)',
+    '--feature-color-dark':  'hsl(30, 40%, 97%)',
   },
+  /* warm taupe / mushroom */
   purple: {
-    '--feature-color':       'hsl(262, 85%, 60%)',
-    '--feature-color-light': 'hsl(261, 100%, 87%)',
-    '--feature-color-dark':  'hsl(264, 100%, 98%)',
+    '--feature-color':       'hsl(35, 18%, 44%)',
+    '--feature-color-light': 'hsl(35, 18%, 86%)',
+    '--feature-color-dark':  'hsl(35, 14%, 97%)',
   },
+  /* deep burgundy / wine */
   blue: {
-    '--feature-color':       'hsl(211, 100%, 60%)',
-    '--feature-color-light': 'hsl(210, 100%, 83%)',
-    '--feature-color-dark':  'hsl(216, 100%, 98%)',
+    '--feature-color':       'hsl(355, 38%, 40%)',
+    '--feature-color-light': 'hsl(4, 40%, 87%)',
+    '--feature-color-dark':  'hsl(0, 22%, 97%)',
   },
 };
 

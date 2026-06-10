@@ -38,10 +38,10 @@ function TrebleClefs({ minOpacity = 0.06, maxOpacity = 0.12 }: { minOpacity?: nu
   const [clefs, setClefs] = useState<ClefDatum[]>([]);
 
   useEffect(() => {
-    const count = 50; // fixed count for consistent fill
+    const count = 12; // sparse — confined to right side away from copy
     setClefs(
       Array.from({ length: count }, () => ({
-        x: Math.random() * 100,
+        x: 48 + Math.random() * 52, // right 52% only — never over text
         y: Math.random() * 90, // 0–90% spread across full hero
         size: 16 + Math.random() * 24, // 16–40 px
         opacity: minOpacity + Math.random() * (maxOpacity - minOpacity),

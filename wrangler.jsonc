@@ -6,6 +6,10 @@
   // nodejs_compat lets the Resend SDK (and any other npm packages that use
   // Node built-ins like Buffer/crypto) run in the Workers runtime.
   "compatibility_flags": ["nodejs_compat"],
+  "routes": [
+    { "pattern": "ferguskwan.com", "custom_domain": true },
+    { "pattern": "www.ferguskwan.com", "custom_domain": true }
+  ],
   "assets": {
     // Next.js static export lands here; the Worker falls through to it
     // for every request that isn't POST /api/contact.

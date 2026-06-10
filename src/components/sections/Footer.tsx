@@ -15,7 +15,7 @@ export default function Footer() {
               <li key={link}>
                 <a
                   href={`#${link.toLowerCase()}`}
-                  className="font-body text-[0.8125rem] font-light text-ivory/55 hover:text-ivory transition-colors"
+                  className="font-body text-[0.8125rem] font-light text-ivory/55 hover:text-ivory transition-colors py-3 px-1 inline-block"
                 >
                   {link}
                 </a>

@@ -47,7 +47,7 @@ export default function Nav() {
           ))}
           <a
             href="#contact"
-            className="font-body text-[0.75rem] font-medium tracking-[0.1em] uppercase px-6 py-2.5 border border-ivory/30 text-ivory/80 hover:border-ivory hover:text-ivory transition-colors rounded-sm"
+            className="font-body text-[0.75rem] font-medium tracking-[0.1em] uppercase px-6 py-3 border border-ivory/30 text-ivory/80 hover:border-ivory hover:text-ivory transition-colors rounded-sm"
           >
             Book a Lesson
           </a>

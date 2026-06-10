@@ -1,0 +1,15 @@
+{
+  // https://developers.cloudflare.com/workers/wrangler/configuration/
+  "name": "fergus-kwan",
+  "main": "./worker.ts",
+  "compatibility_date": "2026-06-10",
+  // nodejs_compat lets the Resend SDK (and any other npm packages that use
+  // Node built-ins like Buffer/crypto) run in the Workers runtime.
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    // Next.js static export lands here; the Worker falls through to it
+    // for every request that isn't POST /api/contact.
+    "directory": "./out",
+    "binding": "ASSETS"
+  }
+}

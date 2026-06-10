@@ -4,12 +4,13 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-interface AnimatedFeatureCardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface AnimatedFeatureCardProps {
   index: string;
   tag: string;
   title: React.ReactNode;
   imageSrc: string;
   color: "orange" | "purple" | "blue";
+  className?: string;
 }
 
 const colorVariants = {

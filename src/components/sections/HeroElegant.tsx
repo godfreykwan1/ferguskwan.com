@@ -271,13 +271,6 @@ function HeroContent() {
   return (
     <div className="relative z-10 mx-auto max-w-[1200px] px-[clamp(1.5rem,5vw,4rem)] w-full">
       <div className="max-w-[800px]">
-        <p
-          className="font-body text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-secondary mb-8 animate-fade-up"
-          style={{ animationDelay: '0.10s' }}
-        >
-          Pianist · Composer · Teacher
-        </p>
-
         <h1
           className="font-display text-[clamp(3.75rem,9vw,7.5rem)] font-light leading-none tracking-[-0.01em] text-primary mb-3 animate-fade-up"
           style={{ animationDelay: '0.25s' }}

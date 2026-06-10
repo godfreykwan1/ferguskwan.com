@@ -25,7 +25,7 @@ export default function About() {
             </h2>
 
             <div
-              className="font-body text-[0.9375rem] font-light leading-[1.8] mb-10 space-y-[1.125rem]"
+              className="font-body text-[1rem] font-light leading-[1.8] mb-10 space-y-[1.125rem]"
               style={{ color: 'var(--color-primary)' }}
             >
               <p>

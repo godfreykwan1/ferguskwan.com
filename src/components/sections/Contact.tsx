@@ -60,7 +60,7 @@ export default function Contact() {
             <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.15] text-primary mb-5">
               Get in Touch
             </h2>
-            <p className="font-body text-[0.9375rem] font-light text-foreground/90 leading-[1.8] mb-10">
+            <p className="font-body text-[1rem] font-light text-foreground/90 leading-[1.8] mb-10">
               Whether you&apos;re interested in lessons, a performance enquiry, or a composition
               commission — Fergus would love to hear from you.
             </p>
@@ -73,7 +73,7 @@ export default function Contact() {
                   <span className="block font-body text-[0.6875rem] font-medium tracking-[0.12em] uppercase text-foreground/70 mb-1">
                     {d.label}
                   </span>
-                  <span className="font-body text-[0.9375rem] font-light text-foreground/90">{d.value}</span>
+                  <span className="font-body text-[1rem] font-light text-foreground/90">{d.value}</span>
                 </div>
               ))}
             </div>
@@ -101,7 +101,7 @@ export default function Contact() {
                   <input
                     id={f.id} name={f.id} type={f.type}
                     placeholder={f.placeholder} autoComplete={f.autoComplete} required
-                    className="contact-input font-body text-[0.9375rem] font-light text-primary bg-ivory border border-primary/20 rounded-sm px-4 py-3 w-full focus:outline-none focus:border-accent"
+                    className="contact-input font-body text-[1rem] font-light text-primary bg-ivory border border-primary/20 rounded-sm px-4 py-3 w-full focus:outline-none focus:border-accent"
                     style={{ borderColor: '#C4BFB8' }}
                   />
                 </div>
@@ -118,7 +118,7 @@ export default function Contact() {
               </label>
               <select
                 id="lesson-type" name="lesson-type"
-                className="font-body text-[0.9375rem] font-light text-primary bg-ivory border border-primary/20 rounded-sm px-4 py-3 w-full focus:outline-none focus:border-accent appearance-none cursor-pointer"
+                className="font-body text-[1rem] font-light text-primary bg-ivory border border-primary/20 rounded-sm px-4 py-3 w-full focus:outline-none focus:border-accent appearance-none cursor-pointer"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2344403C' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,
                   backgroundRepeat: 'no-repeat',
@@ -146,7 +146,7 @@ export default function Contact() {
               <textarea
                 id="message" name="message" required
                 placeholder="Tell me a little about your background and what you are looking for…"
-                className="contact-input font-body text-[0.9375rem] font-light text-primary bg-ivory border border-primary/20 rounded-sm px-4 py-3 w-full focus:outline-none focus:border-accent resize-y min-h-[130px]"
+                className="contact-input font-body text-[1rem] font-light text-primary bg-ivory border border-primary/20 rounded-sm px-4 py-3 w-full focus:outline-none focus:border-accent resize-y min-h-[130px]"
                 style={{ borderColor: '#C4BFB8' }}
               />
             </div>

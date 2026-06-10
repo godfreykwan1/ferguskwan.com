@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .bg { fill: #1a1a2e; }
+    .white-key { fill: #f5f0e8; }
+    .black-key { fill: #1a1a2e; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #f5f0e8; }
+      .white-key { fill: #1a1a2e; }
+      .black-key { fill: #f5f0e8; }
+    }
+  </style>
+  <rect class="bg" width="64" height="64" rx="12"/>
+  <!-- three white keys -->
+  <rect class="white-key" x="12" y="14" width="11" height="36" rx="2"/>
+  <rect class="white-key" x="26.5" y="14" width="11" height="36" rx="2"/>
+  <rect class="white-key" x="41" y="14" width="11" height="36" rx="2"/>
+  <!-- two black keys -->
+  <rect class="black-key" x="20" y="14" width="7" height="22" rx="1.5"/>
+  <rect class="black-key" x="34.5" y="14" width="7" height="22" rx="1.5"/>
+</svg>

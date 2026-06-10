@@ -19,9 +19,40 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Fergus Kwan — Concert Pianist & Composer',
+  metadataBase: new URL('https://ferguskwan.com'),
+  title: {
+    default: 'Fergus Kwan — Concert Pianist & Composer',
+    template: '%s | Fergus Kwan',
+  },
   description:
     'Fergus Kwan is a concert pianist and composer based in Vancouver. Piano lessons, live performances, and original compositions.',
+  keywords: ['pianist', 'composer', 'piano lessons', 'Vancouver', 'classical music', 'concert pianist', 'Fergus Kwan'],
+  authors: [{ name: 'Fergus Kwan', url: 'https://ferguskwan.com' }],
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_CA',
+    url: 'https://ferguskwan.com',
+    siteName: 'Fergus Kwan',
+    title: 'Fergus Kwan — Concert Pianist & Composer',
+    description: 'Concert pianist and composer based in Vancouver. Piano lessons, live performances, and original compositions.',
+    images: [
+      {
+        url: '/images/fergus.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Fergus Kwan — Concert Pianist & Composer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fergus Kwan — Concert Pianist & Composer',
+    description: 'Concert pianist and composer based in Vancouver. Piano lessons, live performances, and original compositions.',
+    images: ['/images/fergus.jpg'],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

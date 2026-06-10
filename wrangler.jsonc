@@ -10,6 +10,9 @@
     // Next.js static export lands here; the Worker falls through to it
     // for every request that isn't POST /api/contact.
     "directory": "./out",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    // When env.ASSETS.fetch() finds no matching file, serve out/404.html
+    // with status 404 instead of a bare Cloudflare error response.
+    "not_found_handling": "404-page"
   }
 }

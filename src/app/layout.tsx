@@ -41,14 +41,18 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/images/fergus.jpg',
-        width: 1200,
-        height: 630,
+        // Actual dimensions: 263×260. Replace with a 1200×630 image for best
+        // social-share previews (current file is too small for large-card format).
+        width: 263,
+        height: 260,
         alt: 'Fergus Kwan — Concert Pianist & Composer',
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    // summary requires ≥144×144; summary_large_image requires ≥300×157.
+    // Current image is 263×260 so summary is the correct card type.
+    card: 'summary',
     title: 'Fergus Kwan — Concert Pianist & Composer',
     description: 'Concert pianist and composer based in Vancouver. Piano lessons, live performances, and original compositions.',
     images: ['/images/fergus.jpg'],

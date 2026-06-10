@@ -52,7 +52,7 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
 
   const valid = await verifyTurnstile(turnstileToken ?? '', ip, env.TURNSTILE_SECRET_KEY);
   if (!valid) {
-    return Response.json({ error: 'Bot check failed. Please try again.' }, { status: 400 });
+    return Response.json({ error: 'Bot check failed. Please try again.', code: 'TURNSTILE_FAILED' }, { status: 400 });
   }
 
   const resend = new Resend(env.RESEND_API_KEY);
@@ -80,6 +80,14 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
+
+    // Canonical domain: redirect www → non-www with 301
+    if (url.hostname === 'www.ferguskwan.com') {
+      return Response.redirect(
+        `https://ferguskwan.com${url.pathname}${url.search}`,
+        301,
+      );
+    }
 
     if (request.method === 'POST' && url.pathname === '/api/contact') {
       return handleContact(request, env);

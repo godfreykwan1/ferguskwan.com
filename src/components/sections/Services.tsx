@@ -13,7 +13,7 @@ const SERVICES = [
     heading: 'Recitals and engagements spanning Baroque to the present day',
     body:   'Solo recitals, concerto appearances, and special events. Appearances include the Chan Centre, VSO Day of Music, and stages across Europe and North America. Programmes tailored to your occasion.',
     cta:    'Book a performance',
-    image:  'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=240&q=80&auto=format&fit=crop',
+    image:  'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=240&q=80&auto=format&fit=crop',
   },
   {
     number: '003',
@@ -21,7 +21,7 @@ const SERVICES = [
     heading: 'Original works and bespoke commissions for any ensemble',
     body:   'From solo piano miniatures to full orchestral scores — original works and commissions premiered at UBC, ChamberFest, and private events. All enquiries welcome.',
     cta:    'Commission a work',
-    image:  'https://images.unsplash.com/photo-1482627750753-afdba16659ef?w=240&q=80&auto=format&fit=crop',
+    image:  'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=240&q=80&auto=format&fit=crop',
   },
 ]
 
@@ -66,7 +66,7 @@ export default function Services() {
                   <h3 className="font-display text-[clamp(1.625rem,2.6vw,2.375rem)] font-normal italic leading-[1.2] text-primary mb-3.5">
                     {s.heading}
                   </h3>
-                  <p className="font-body text-[0.9375rem] font-light leading-[1.8] text-secondary max-w-[520px]">
+                  <p className="font-body text-[0.9375rem] leading-[1.8] text-primary max-w-[520px]">
                     {s.body}
                   </p>
                   <a

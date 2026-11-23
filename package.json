@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "deploy": "next build && wrangler deploy",
+    "deploy:preview": "next build && wrangler deploy --config wrangler.preview.jsonc",
     "wrangler:dev": "next build && wrangler dev"
   },
   "dependencies": {

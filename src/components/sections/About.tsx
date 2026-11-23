@@ -1,83 +1,87 @@
+import Eyebrow from '@/components/ui/Eyebrow'
+import { MASTERCLASSES, RECOGNITION, STUDIED_WITH } from '@/content/site'
+
+function NameList({ heading, names }: { heading: string; names: readonly string[] }) {
+  return (
+    <div>
+      <h3 className="mb-4 font-body text-[13px] font-medium uppercase tracking-[0.24em] text-label">
+        {heading}
+      </h3>
+      <ul className="space-y-2">
+        {names.map(n => (
+          <li key={n} className="font-body text-[16px] leading-[1.6] text-body">{n}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+function ComingSoonLink({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="inline-flex min-h-11 items-center gap-3 font-body text-[14px] font-medium uppercase tracking-[0.08em] text-muted">
+      {children}
+      <span className="border border-dash px-2 py-0.5 text-[11px] tracking-[0.16em] text-label">
+        Coming soon
+      </span>
+    </span>
+  )
+}
+
 export default function About() {
   return (
-    <section id="about" className="bg-surface py-[clamp(4rem,8vw,8rem)]">
-      <div className="mx-auto max-w-[1200px] px-[clamp(1.5rem,5vw,4rem)]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(2.5rem,6vw,5rem)] items-start">
+    <section id="about" className="border-t border-line bg-ink-2">
+      <div className="mx-auto max-w-[1200px] px-4 py-20 sm:px-6 md:px-10 md:py-28">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[5fr_7fr] md:gap-16">
 
-          <div className="relative w-full aspect-[3/4] overflow-hidden">
+          <div className="relative aspect-[4/5] w-full overflow-hidden bg-fill">
+            {/* eslint-disable-next-line @next/next/no-img-element -- static export: no image optimizer */}
             <img
-              src="/images/fergus.jpg"
+              src="/images/fergus-portrait.jpg"
               alt="Fergus Kwan at the piano"
-              className="w-full h-full object-cover object-center"
+              className="absolute inset-0 h-full w-full object-cover object-center"
             />
           </div>
 
-          {/* Content */}
-          <div className="pt-1">
-            <p
-              className="font-body text-[0.6875rem] font-medium tracking-[0.15em] uppercase mb-5"
-              style={{ color: 'var(--color-secondary)' }}
-            >
-              About
-            </p>
-            <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.15] text-primary mb-7">
-              A Life Shaped by Music
+          <div>
+            <Eyebrow className="mb-4">About</Eyebrow>
+            <h2 className="mb-8 font-display text-[40px] font-normal leading-[1.05] text-heading md:text-[56px]">
+              A life shaped by music
             </h2>
 
-            <div
-              className="font-body text-[1rem] font-light leading-[1.8] mb-10 space-y-[1.125rem]"
-              style={{ color: 'var(--color-primary)' }}
-            >
+            <div className="space-y-5 font-body text-[17px] leading-[1.75] text-body">
               <p>
-                Fergus Kwan is a concert pianist and composer based in Vancouver,
-                and has graduated from the University of British Columbia. He holds
-                a Bachelor of Music degree majoring in Piano Performance and Composition,
-                and is currently pursuing a Masters degree with Dr. David Fung.
+                Fergus Kwan is a Vancouver-based pianist. A graduate of the University of British
+                Columbia with a Bachelor of Music in Piano Performance and Composition, he is
+                currently pursuing a Master&apos;s degree with Dr. David Fung.
               </p>
               <p>
-                He has studied with Dr. Corey Hamm, Dr. Henri-Paul Sicsic, Prof. Rena Sharon,
-                Dr. Jennifer Butler, and Prof. Serra Hwang, and has participated in masterclasses
-                with Prof. Jon Kimura Parker, Dr. Henry Kramer, Ilana Vered, and Nelson Goerner.
+                He has given recitals for the Vancouver Chopin Society, Vancouver Westcoast Music
+                Society and Mastery School of Music, and has appeared in the Five Piano Fantasy concert
+                at the Chan Centre, at VSO Day of Music and the Gifted Artists Concerto Gala. He has
+                performed with the Chilliwack Symphony Orchestra and in countries across Europe and
+                North America.
               </p>
               <p>
-                A passionate performer, Fergus has given recitals for the Vancouver Chopin Society,
-                the Vancouver Westcoast Music Society, and Mastery School of Music, and has appeared
-                at the Five Piano Fantasy concert at the Chan Centre, the VSO Day of Music,
-                and the Gifted Artists Concerto Gala. He has performed with the Chilliwack Symphony
-                Orchestra and in countries across Europe and North America.
+                As a composer, his works include &ldquo;after hours&rdquo;, &ldquo;Three Character
+                Pieces&rdquo; and &ldquo;To Them&rdquo;, performed at the UBC Premiere Concert and
+                ChamberFest. He also orchestrated and performed Alexina Louie&apos;s{' '}
+                <em>Memories in an Ancient Garden</em> with the Chilliwack Symphony Orchestra.
               </p>
             </div>
 
-            <div
-              className="font-body text-[0.8125rem] font-light leading-[1.75] mb-10"
-              style={{ color: 'var(--color-primary)' }}
-            >
-              <span
-                className="block font-body text-[0.6875rem] font-medium tracking-[0.15em] uppercase mb-2"
-                style={{ color: 'var(--color-secondary)' }}
-              >
-                Recognition
-              </span>
-              Canadian Music Competition · Vancouver Westcoast Music Society · Pacific Youth
-              International Competition · Architecture of Music Competition · Elevato International
-              Piano Competition · Best Performance of a work by Chopin (Vancouver Chopin Society)
+            <div className="mt-10 grid grid-cols-1 gap-8 border-t border-line pt-10 sm:grid-cols-2">
+              <NameList heading="Studied with" names={STUDIED_WITH} />
+              <NameList heading="Masterclasses" names={MASTERCLASSES} />
             </div>
 
-            <blockquote className="border-l-2 border-accent pl-6">
-              <p
-                className="font-display text-[clamp(1.125rem,2.5vw,1.5rem)] italic font-light leading-[1.55] mb-3.5"
-                style={{ color: 'var(--color-primary)', opacity: 0.8 }}
-              >
-                &ldquo;A passionate performer spanning Baroque to contemporary music —
-                performing across Europe, North America, and the concert stages of Vancouver.&rdquo;
-              </p>
-              <cite
-                className="font-body text-[0.6875rem] font-medium tracking-[0.12em] uppercase not-italic"
-                style={{ color: 'var(--color-secondary)' }}
-              >
-                Fergus Kwan
-              </cite>
-            </blockquote>
+            <div className="mt-10 border-t border-line pt-10">
+              <NameList heading="Recognition" names={RECOGNITION} />
+            </div>
+
+            <div className="mt-10 flex flex-col gap-2 sm:flex-row sm:gap-8">
+              <ComingSoonLink>Full biography</ComingSoonLink>
+              <ComingSoonLink>Download press kit (PDF)</ComingSoonLink>
+            </div>
           </div>
 
         </div>

@@ -1,23 +1,24 @@
-import Nav         from '@/components/sections/Nav'
-import HeroElegant from '@/components/sections/HeroElegant'
-import About        from '@/components/sections/About'
-import Services     from '@/components/sections/Services'
-import Listen       from '@/components/sections/Listen'
-import Contact      from '@/components/sections/Contact'
-import Footer       from '@/components/sections/Footer'
+import Hero            from '@/components/sections/Hero'
+import CredentialStrip from '@/components/sections/CredentialStrip'
+import FeaturedVideos  from '@/components/sections/FeaturedVideos'
+import About           from '@/components/sections/About'
+import Disciplines     from '@/components/sections/Disciplines'
+import Events          from '@/components/sections/Events'
+import Contact         from '@/components/sections/Contact'
+import { SITE_URL }    from '@/content/site'
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'Person',
-      '@id': 'https://ferguskwan.com/#person',
+      '@id': `${SITE_URL}/#person`,
       name: 'Fergus Kwan',
-      jobTitle: 'Concert Pianist & Composer',
+      jobTitle: 'Pianist',
       description:
-        'Concert pianist and composer based in Vancouver, BC. Offering piano lessons, live performances, and original compositions.',
-      url: 'https://ferguskwan.com',
-      image: 'https://ferguskwan.com/images/fergus.jpg',
+        'Vancouver-based pianist, performing repertoire from Baroque to contemporary, in solo recital, concerto and chamber music.',
+      url: SITE_URL,
+      image: `${SITE_URL}/images/fergus-portrait.jpg`,
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Vancouver',
@@ -37,20 +38,6 @@ const jsonLd = {
         'Contemporary Classical Music',
       ],
     },
-    {
-      '@type': 'Service',
-      '@id': 'https://ferguskwan.com/#piano-lessons',
-      name: 'Piano Lessons',
-      serviceType: 'Music Instruction',
-      description:
-        'One-on-one piano lessons from beginner foundations to concert preparation. In-person in Vancouver or online.',
-      provider: { '@id': 'https://ferguskwan.com/#person' },
-      areaServed: {
-        '@type': 'City',
-        name: 'Vancouver',
-        containedInPlace: { '@type': 'Country', name: 'Canada' },
-      },
-    },
   ],
 }
 
@@ -62,13 +49,13 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <main>
-        <Nav />
-        <HeroElegant variant="b5" />
+        <Hero />
+        <CredentialStrip />
+        <FeaturedVideos />
         <About />
-        <Services />
-        <Listen />
+        <Disciplines />
+        <Events />
         <Contact />
-        <Footer />
       </main>
     </>
   )

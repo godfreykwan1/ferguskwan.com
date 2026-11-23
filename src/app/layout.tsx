@@ -1,68 +1,59 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
 import './globals.css'
-import { cn } from "@/lib/utils";
+import Nav from '@/components/sections/Nav'
+import Footer from '@/components/sections/Footer'
+import { BASE_OPEN_GRAPH, BASE_TWITTER, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/content/site'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['300', '400', '600'],
-  style: ['normal', 'italic'],
+  weight: ['400', '500'],
   variable: '--font-cormorant',
   display: 'swap',
 })
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
+  weight: ['400', '500', '600'],
   variable: '--font-inter',
   display: 'swap',
 })
 
+const DEFAULT_TITLE = 'Fergus Kwan | Pianist'
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ferguskwan.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Fergus Kwan — Concert Pianist & Composer',
+    default: DEFAULT_TITLE,
     template: '%s | Fergus Kwan',
   },
-  description:
-    'Fergus Kwan is a concert pianist and composer based in Vancouver. Piano lessons, live performances, and original compositions.',
-  keywords: ['pianist', 'composer', 'piano lessons', 'Vancouver', 'classical music', 'concert pianist', 'Fergus Kwan'],
-  authors: [{ name: 'Fergus Kwan', url: 'https://ferguskwan.com' }],
+  description: SITE_DESCRIPTION,
+  keywords: ['pianist', 'Vancouver', 'classical music', 'piano recital', 'concerto', 'chamber music', 'piano lessons', 'composer', 'Fergus Kwan'],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_CA',
-    url: 'https://ferguskwan.com',
-    siteName: 'Fergus Kwan',
-    title: 'Fergus Kwan — Concert Pianist & Composer',
-    description: 'Concert pianist and composer based in Vancouver. Piano lessons, live performances, and original compositions.',
-    images: [
-      {
-        url: '/images/fergus.jpg',
-        // Actual dimensions: 263×260. Replace with a 1200×630 image for best
-        // social-share previews (current file is too small for large-card format).
-        width: 263,
-        height: 260,
-        alt: 'Fergus Kwan — Concert Pianist & Composer',
-      },
-    ],
+    ...BASE_OPEN_GRAPH,
+    url: SITE_URL,
+    title: DEFAULT_TITLE,
+    description: SITE_DESCRIPTION,
   },
   twitter: {
-    // summary requires ≥144×144; summary_large_image requires ≥300×157.
-    // Current image is 263×260 so summary is the correct card type.
-    card: 'summary',
-    title: 'Fergus Kwan — Concert Pianist & Composer',
-    description: 'Concert pianist and composer based in Vancouver. Piano lessons, live performances, and original compositions.',
-    images: ['/images/fergus.jpg'],
+    ...BASE_TWITTER,
+    title: DEFAULT_TITLE,
+    description: SITE_DESCRIPTION,
   },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={cn(cormorant.variable, inter.variable, "font-sans")}>
-      <body className="antialiased">{children}</body>
+    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
+      <body className="min-h-screen bg-ink font-body text-body antialiased">
+        <Nav />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

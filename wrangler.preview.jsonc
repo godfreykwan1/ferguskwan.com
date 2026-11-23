@@ -1,0 +1,17 @@
+{
+  // Preview Worker for the redesign demo. workers.dev only: no routes, no custom domain.
+  // Deploy with: npm run deploy:preview
+  // Secrets are per Worker; set them with:
+  //   npx wrangler secret put RESEND_API_KEY --config wrangler.preview.jsonc
+  //   npx wrangler secret put TURNSTILE_SECRET_KEY --config wrangler.preview.jsonc
+  "name": "fergus-kwan-preview",
+  "main": "./worker.ts",
+  "compatibility_date": "2026-06-10",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  }
+}

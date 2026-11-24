@@ -62,10 +62,12 @@ export default function About() {
                 North America.
               </p>
               <p>
-                As a composer, his works include &ldquo;after hours&rdquo;, &ldquo;Three Character
-                Pieces&rdquo; and &ldquo;To Them&rdquo;, performed at the UBC Premiere Concert and
-                ChamberFest. He also orchestrated and performed Alexina Louie&apos;s{' '}
-                <em>Memories in an Ancient Garden</em> with the Chilliwack Symphony Orchestra.
+                As a composer, his works include &ldquo;after hours&rdquo;, &ldquo;fleeting dreams,
+                fleeting memories&rdquo; and &ldquo;To Them&rdquo;, performed at the UBC Premiere
+                Concert and ChamberFest. He has worked with Professor Rena Sharon to bring new works
+                for voice and piano to students at UBC, and orchestrated and performed Alexina
+                Louie&apos;s <em>Memories in an Ancient Garden</em> with the Chilliwack Symphony
+                Orchestra.
               </p>
             </div>
 

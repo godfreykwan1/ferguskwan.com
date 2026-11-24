@@ -34,6 +34,7 @@ export const BASE_TWITTER = {
 export const NAV_LINKS = [
   { label: 'About',        href: '/#about' },
   { label: 'Media',        href: '/media' },
+  { label: 'Repertoire',   href: '/#repertoire' },
   { label: 'Compositions', href: '/#compositions' },
   { label: 'Events',       href: '/#events' },
   { label: 'Teaching',     href: '/teaching' },
@@ -46,6 +47,7 @@ export const CREDENTIALS = [
   'Chilliwack Symphony Orchestra',
   'VSO Day of Music',
   'Canadian Music Competition',
+  'Mastery School of Music',
 ] as const
 
 export const STUDIED_WITH = [
@@ -88,6 +90,6 @@ export const STUDENT_ACHIEVEMENTS = [
   },
 ] as const
 
-export const CONTACT_EMAIL = 'fergus@ferguskwan.com'
+export const CONTACT_EMAIL = 'contact@ferguskwan.com'
 
 export const SOUND_OF_MUSIC_URL = 'https://soundofmusicacademy.com/'

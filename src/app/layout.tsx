@@ -19,7 +19,7 @@ const inter = Inter({
   display: 'swap',
 })
 
-const DEFAULT_TITLE = 'Fergus Kwan | Pianist'
+const DEFAULT_TITLE = 'Fergus Kwan | Pianist and Composer'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

@@ -13,7 +13,7 @@ const COLUMNS = [
     id: 'compositions',
     numeral: 'II',
     title: 'Compositions',
-    text: 'Original works including “after hours”, “Three Character Pieces” and “To Them”, performed at the UBC Premiere Concert and ChamberFest. Commissions for any ensemble.',
+    text: 'Original works including “after hours”, “fleeting dreams, fleeting memories” and “To Them”, performed at the UBC Premiere Concert and ChamberFest. Commissions for any ensemble.',
     link: { label: 'Enquire about a commission', href: '/#contact' },
   },
   {

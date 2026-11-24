@@ -2,7 +2,7 @@ import { CREDENTIALS } from '@/content/site'
 
 export default function CredentialStrip() {
   return (
-    <section aria-labelledby="credentials-label" className="border-t border-line bg-ink-2">
+    <section aria-labelledby="credentials-label" className="border-t border-line bg-ink">
       <div className="mx-auto max-w-[1200px] px-4 py-10 sm:px-6 md:px-10">
         <p
           id="credentials-label"
@@ -10,7 +10,7 @@ export default function CredentialStrip() {
         >
           Performed with &amp; recognized by
         </p>
-        <ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-5">
+        <ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
           {CREDENTIALS.map(c => (
             <li
               key={c}

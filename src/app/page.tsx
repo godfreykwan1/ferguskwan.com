@@ -1,6 +1,7 @@
 import Hero            from '@/components/sections/Hero'
 import CredentialStrip from '@/components/sections/CredentialStrip'
 import FeaturedVideos  from '@/components/sections/FeaturedVideos'
+import Repertoire      from '@/components/sections/Repertoire'
 import About           from '@/components/sections/About'
 import Disciplines     from '@/components/sections/Disciplines'
 import Events          from '@/components/sections/Events'
@@ -14,7 +15,7 @@ const jsonLd = {
       '@type': 'Person',
       '@id': `${SITE_URL}/#person`,
       name: 'Fergus Kwan',
-      jobTitle: 'Pianist',
+      jobTitle: 'Pianist and Composer',
       description:
         'Vancouver-based pianist, performing repertoire from Baroque to contemporary, in solo recital, concerto and chamber music.',
       url: SITE_URL,
@@ -52,6 +53,7 @@ export default function Home() {
         <Hero />
         <CredentialStrip />
         <FeaturedVideos />
+        <Repertoire />
         <About />
         <Disciplines />
         <Events />

@@ -3,9 +3,9 @@ import ButtonLink from '@/components/ui/ButtonLink'
 
 export default function Hero() {
   return (
-    <section className="bg-ink">
+    <section className="bg-ink-2">
       <div className="mx-auto max-w-[1200px] px-4 pb-12 pt-16 sm:px-6 md:px-10 md:pb-16 md:pt-24">
-        <Eyebrow className="mb-6">Pianist · Vancouver</Eyebrow>
+        <Eyebrow className="mb-6">Pianist | Composer</Eyebrow>
 
         <h1 className="font-display text-[clamp(64px,10vw,148px)] font-normal leading-[0.92] tracking-[-0.01em] text-heading">
           Fergus Kwan

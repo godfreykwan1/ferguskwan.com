@@ -20,9 +20,9 @@ export default function Nav() {
           Fergus Kwan
         </Link>
 
-        {/* Desktop nav (1024px and up) */}
-        <nav className="hidden lg:block" aria-label="Main navigation">
-          <ul className="flex items-center gap-1 lg:gap-3">
+        {/* Desktop nav (1280px and up) */}
+        <nav className="hidden xl:block" aria-label="Main navigation">
+          <ul className="flex items-center gap-1 xl:gap-3">
             {NAV_LINKS.map(link => (
               <li key={link.href}>
                 <Link
@@ -36,10 +36,10 @@ export default function Nav() {
           </ul>
         </nav>
 
-        {/* Mobile toggle (under 1024px) */}
+        {/* Mobile toggle (under 1280px) */}
         <button
           type="button"
-          className="-mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5 lg:hidden"
+          className="-mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5 xl:hidden"
           onClick={() => setMenuOpen(o => !o)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
@@ -54,7 +54,7 @@ export default function Nav() {
       {menuOpen && (
         <nav
           id="mobile-menu"
-          className="border-t border-line bg-ink px-4 py-4 sm:px-6 lg:hidden"
+          className="border-t border-line bg-ink px-4 py-4 sm:px-6 xl:hidden"
           aria-label="Mobile navigation"
         >
           <ul className="flex flex-col">

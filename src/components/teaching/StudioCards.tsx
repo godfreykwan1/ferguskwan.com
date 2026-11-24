@@ -30,8 +30,6 @@ export default function StudioCards() {
             </p>
             <dl className="mt-8 flex-1">
               <Detail term="Location" value="Home studio, Port Coquitlam" />
-              <Detail term="Lesson length" value="[30 / 45 / 60 min]" />
-              <Detail term="Rate" value="[YOUR RATE]" />
             </dl>
             <Link href="/#contact" className={LINK}>Enquire with Fergus</Link>
           </article>

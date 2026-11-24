@@ -52,15 +52,15 @@ Because the site is statically exported, **Next.js server features (server actio
 
 ### Routes
 
-- `/` (`src/app/page.tsx`): Hero, CredentialStrip, FeaturedVideos, About, Disciplines, Events, Contact. Person JSON-LD.
+- `/` (`src/app/page.tsx`): Hero, CredentialStrip, FeaturedVideos, Repertoire, About, Disciplines, Events, Contact. Person JSON-LD.
 - `/media` (`src/app/media/page.tsx`): filterable video library (`MediaLibrary`).
 - `/teaching` (`src/app/teaching/page.tsx`): studio cards, levels, how to start, CTA. Service JSON-LD.
 - `src/app/not-found.tsx`: dark 404, exported as `out/404.html` and served by the Worker's `404-page` handling.
-- `Nav` and `Footer` are rendered once in `src/app/layout.tsx`. Nav links to sections use `/#anchor` so they work from any page.
+- `Nav` and `Footer` are rendered once in `src/app/layout.tsx`. Nav links to sections use `/#anchor` so they work from any page. With 7 nav links the desktop nav shows from `xl` (1280px); below that the toggle and mobile menu are used.
 
 ### Metadata
 
-Root metadata lives in `src/app/layout.tsx` (default title `Fergus Kwan | Pianist`, template `%s | Fergus Kwan`). Next merges metadata shallowly, so each page sets its own `alternates.canonical` and spreads `BASE_OPEN_GRAPH` / `BASE_TWITTER` from `src/content/site.ts` to keep the OG image. Add new routes to `src/app/sitemap.ts`.
+Root metadata lives in `src/app/layout.tsx` (default title `Fergus Kwan | Pianist and Composer`, template `%s | Fergus Kwan`). Next merges metadata shallowly, so each page sets its own `alternates.canonical` and spreads `BASE_OPEN_GRAPH` / `BASE_TWITTER` from `src/content/site.ts` to keep the OG image. Add new routes to `src/app/sitemap.ts`.
 
 ### Content
 
@@ -68,6 +68,7 @@ Editable content is kept in typed data files so real data is a one-file edit:
 - `src/content/site.ts`: nav links, credentials, teachers, masterclasses, recognition, contact email, shared metadata.
 - `src/content/videos.ts`: every YouTube video (id, title, venue, year, category). Bracketed values like `[Piece, Composer]` are visible placeholders.
 - `src/content/events.ts`: upcoming performances (currently `[DATE]` placeholders).
+- `src/content/repertoire.ts`: repertoire grouped by category (Solo, Concerto, Chamber) for the home `Repertoire` section (`/#repertoire`). Currently `[Composer]` / `[Work]` placeholders.
 
 ### Component layout
 
